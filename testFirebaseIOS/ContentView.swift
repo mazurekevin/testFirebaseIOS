@@ -8,16 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var identitifiant: String = ""
+    @State var password: String = ""
+    
+    func login(){
+        
+    }
+    
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("identifiant", text: $identitifiant).padding().border(Color.black)
+            
+            TextField("password", text: $password).padding().border(Color.black)
+            
+            Button(action: {
+                login()
+            }){
+                Text("Valider")
+            }.padding()
         }
         .padding()
     }
 }
+
+
 
 #Preview {
     ContentView()
